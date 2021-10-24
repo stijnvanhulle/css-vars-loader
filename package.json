@@ -29,6 +29,7 @@
   "author": "Stijn Van Hulle <stijn@stijnvanhulle.be",
   "license": "MIT",
   "publishConfig": {
+    "access": "public",
     "@stijnvanhulle:registry": "https://npm.pkg.github.com"
   },
   "peerDependencies": {
