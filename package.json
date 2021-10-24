@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.15.0",
-    "loader-utils": "^3.0.0",
     "schema-utils": "^3.1.1"
   },
   "devDependencies": {
@@ -45,7 +44,6 @@
     "@babel/core": "^7.15.8",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.15.8",
-    "@types/loader-utils": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "@webpack-contrib/defaults": "^6.3.0",

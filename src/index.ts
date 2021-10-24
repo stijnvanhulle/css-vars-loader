@@ -1,4 +1,3 @@
-import { getOptions } from 'loader-utils';
 import webpack from 'webpack';
 import { validate } from 'schema-utils';
 import { Schema } from 'schema-utils/declarations/validate';
@@ -17,11 +16,11 @@ export default function loader(
   contents: string
 ) {
   this.cacheable();
-  const options = (getOptions(this) as unknown as LoaderOptions) || {};
+  const options = this.getOptions(schema as any) || {};
   const callback = this.async();
 
   validate(schema as Schema, options, {
-    name: 'css-vars-loader',
+    name: '@stijnvanhulle/css-vars-loader',
     baseDataPath: 'options',
   });
 
@@ -30,6 +29,7 @@ export default function loader(
     let newSource = contents;
 
     if (path === options.file) {
+      this.getOptions();
       const cssVariables = Object.keys(options.modifyVars).map((key) => {
         const value = options.modifyVars[key];
         // filter when already css variable

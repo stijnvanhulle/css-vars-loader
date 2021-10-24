@@ -26,7 +26,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: `css-vars-loader`,
+            loader: `@stijnvanhulle/css-vars-loader`,
             options: { ...options },
           },
         ],
@@ -54,7 +54,7 @@ module.exports = {
   module: {
     rules: [
       {
-        loader: `css-vars-loader`,
+        loader: `@stijnvanhulle/css-vars-loader`,
         options: {
           modifyVars: {
             'primary-color': 'blue',
@@ -80,7 +80,7 @@ module.exports = {
   module: {
     rules: [
       {
-        loader: `css-vars-loader`,
+        loader: `@stijnvanhulle/css-vars-loader`,
         options: {
           modifyVars: {
             'primary-color': 'blue',
