@@ -4,10 +4,9 @@
   </a>
 </div>
 
-
 # @stijnvanhulle/css-vars-loader
 
-${description}
+Loader to use config.json file as css variables
 
 ## Getting Started
 
@@ -17,22 +16,6 @@ To begin, you'll need to install `@stijnvanhulle/css-vars-loader`:
 $ npm install @stijnvanhulle/css-vars-loader --save-dev
 ```
 
-<!-- isLoader ? use(this) : delete(isPlugin) -->
-
-Then add the loader to your `webpack` config. For example:
-
-<!-- isPlugin ? use(this) : delete(isLoader) -->
-
-Then add the plugin to your `webpack` config. For example:
-
-**file.ext**
-
-```js
-import file from 'file.ext';
-```
-
-<!-- isLoader ? use(this) : delete(isPlugin) -->
-
 **webpack.config.js**
 
 ```js
@@ -40,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ext$/,
+        test: /\.css$/,
         use: [
           {
             loader: `css-vars-loader`,
@@ -53,30 +36,16 @@ module.exports = {
 };
 ```
 
-<!-- isPlugin ? use(this) : delete(isLoader) -->
-
-**webpack.config.js**
-
-```js
-module.exports = {
-  plugins: [
-    new `CssVarsLoader`Plugin(options)
-  ]
-}
-```
-
 And run `webpack` via your preferred method.
 
 ## Options
 
-### `[option]`
+### `modifyVars`
 
-Type: `[type|other-type]`
-Default: `[type|null]`
+Type: `modifyVars`
+Default: `undefined`
 
-[ option description ]
-
-<!-- isLoader ? use(this) : delete(isPlugin) -->
+Object with all colours you wan to use as css variables
 
 **webpack.config.js**
 
@@ -87,7 +56,9 @@ module.exports = {
       {
         loader: `css-vars-loader`,
         options: {
-          [option]: '',
+          modifyVars: {
+            'primary-color': 'blue',
+          },
         },
       },
     ],
@@ -95,40 +66,31 @@ module.exports = {
 };
 ```
 
-<!-- isPlugin ? use(this) : delete(isLoader) -->
+### `file`
+
+Type: `file`
+Default: `undefined`
+
+The file where you want to append the css variables
 
 **webpack.config.js**
 
 ```js
 module.exports = {
-  plugins: [
-    new `CssVarsLoader`Plugin({
-      [option]: ''
-    })
-  ]
+  module: {
+    rules: [
+      {
+        loader: `css-vars-loader`,
+        options: {
+          modifyVars: {
+            'primary-color': 'blue',
+          },
+          file: Path.resolve('./css/global.css'),
+        },
+      },
+    ],
+  },
 };
-```
-
-## Examples
-
-[ example outline text ]
-
-**webpack.config.js**
-
-```js
-// Example setup here..
-```
-
-**file.ext**
-
-```js
-// Source code here...
-```
-
-**bundle.js**
-
-```js
-// Bundle code here...
 ```
 
 ## Contributing
@@ -140,18 +102,3 @@ Please take a moment to read our contributing guidelines if you haven't yet done
 ## License
 
 [MIT](./LICENSE)
-
-[npm]: https://img.shields.io/npm/v/@stijnvanhulle/css-vars-loader.svg
-[npm-url]: https://npmjs.com/package/@stijnvanhulle/css-vars-loader
-[node]: https://img.shields.io/node/v/@stijnvanhulle/css-vars-loader.svg
-[node-url]: https://nodejs.org
-[deps]: https://david-dm.org/webpack-contrib/@stijnvanhulle/css-vars-loader.svg
-[deps-url]: https://david-dm.org/webpack-contrib/@stijnvanhulle/css-vars-loader
-[tests]: https://dev.azure.com/webpack-contrib/@stijnvanhulle/css-vars-loader/_apis/build/status/webpack-contrib.@stijnvanhulle/css-vars-loader?branchName=master
-[tests-url]: https://dev.azure.com/webpack-contrib/@stijnvanhulle/css-vars-loader/_build/latest?definitionId=2&branchName=master
-[cover]: https://codecov.io/gh/webpack-contrib/@stijnvanhulle/css-vars-loader/branch/master/graph/badge.svg
-[cover-url]: https://codecov.io/gh/webpack-contrib/@stijnvanhulle/css-vars-loader
-[chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg
-[chat-url]: https://gitter.im/webpack/webpack
-[size]: https://packagephobia.now.sh/badge?p=@stijnvanhulle/css-vars-loader
-[size-url]: https://packagephobia.now.sh/result?p=@stijnvanhulle/css-vars-loader

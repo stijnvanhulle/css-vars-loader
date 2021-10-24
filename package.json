@@ -1,7 +1,7 @@
 {
   "name": "@stijnvanhulle/components",
   "version": "1.0.0",
-  "description": "Loader to use config.json file as css variables ",
+  "description": "Loader to use config.json file as css variables",
   "main": "build/index.js",
   "scripts": {
     "start": "yarn build -- -w",
@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit",
     "typecheck:watch": "yarn run typecheck -- --watch",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "test": "",
     "clean": "del-cli build",
     "release": "standard-version --skip.bump",
     "release:patch": "standard-version --release-as patch",
