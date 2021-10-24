@@ -1,0 +1,60 @@
+{
+  "name": "@stijnvanhulle/components",
+  "version": "1.0.0",
+  "description": "Loader to use config.json file as css variables ",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "yarn build -- -w",
+    "prebuild": "yarn run clean",
+    "build": "babel src --out-dir build --extensions \".ts,.tsx\"",
+    "rad": "yarn build && cd build && npm pack --extensions '.ts'",
+    "transpile": "tsc -p ./tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "yarn run typecheck -- --watch",
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "clean": "del-cli build",
+    "release": "standard-version --skip.bump",
+    "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stijnvanhulle/css-vars-loader.git"
+  },
+  "author": "Stijn Van Hulle <stijn@stijnvanhulle.be",
+  "license": "MIT",
+  "publishConfig": {
+    "@stijnvanhulle:registry": "https://npm.pkg.github.com"
+  },
+  "peerDependencies": {
+    "webpack": "^5.59.1"
+  },
+  "dependencies": {
+    "@babel/preset-typescript": "^7.15.0",
+    "loader-utils": "^3.0.0",
+    "schema-utils": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.15.8",
+    "@types/loader-utils": "^2.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "@webpack-contrib/defaults": "^6.3.0",
+    "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-unused-imports": "^1.1.5",
+    "prettier": "^2.4.1",
+    "standard-version": "^9.3.2",
+    "typescript": "^4.4.4",
+    "webpack": "^5.59.1"
+  }
+}

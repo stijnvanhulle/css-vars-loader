@@ -1,0 +1,27 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.awcache": true,
+    "**/build": true,
+    "**/.tscache": true,
+    "**/sonar-project.properties": true,
+    "**/.gitignore": true,
+    "**/.gitattributes": true,
+    "**/.prettierignore": true,
+    "**/test-results": true,
+    "*.babelcache": true,
+    "*.tersercache": true,
+    "certificates": true,
+    "nginx": true,
+    "build": true,
+    "dist": true,
+    "yarn-error.log": true,
+    "*.tmp.txt": true,
+    "**/node_modules": true
+  }
+}

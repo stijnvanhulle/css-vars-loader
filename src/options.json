@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "modifyVars": {
+      "type": "object"
+    },
+    "file": {
+      "type": "string"
+    }
+  }
+}

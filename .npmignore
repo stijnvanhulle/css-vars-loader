@@ -3,6 +3,9 @@ node_modules/
 .cache
 .dccache
 .db
+.cache
+.key
+.tgz
 
 # Logs
 logs
@@ -12,6 +15,7 @@ yarn-debug.log*
 yarn-error.log*
 *.DS_STORE
 DS_STORE
+coverage
 
 dist
 build
