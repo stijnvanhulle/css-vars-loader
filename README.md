@@ -93,6 +93,58 @@ module.exports = {
 };
 ```
 
+## Examples
+
+[ example outline text ]
+
+**config.js**
+
+```json
+{
+  "primary-color": "#000"
+}
+```
+
+**global.css**
+
+```css
+html {
+  background: white;
+}
+```
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        loader: `@stijnvanhulle/css-vars-loader`,
+        options: {
+          modifyVars: require('./config.js'),
+          file: Path.resolve('./global.css'),
+        },
+      },
+    ],
+  },
+};
+```
+
+**bundle.css**
+
+```css
+html {
+  background: white;
+}
+
+:root{
+  --primary-color: #000;
+}
+
+```
+
+
 ## Contributing
 
 Please take a moment to read our contributing guidelines if you haven't yet done so.
