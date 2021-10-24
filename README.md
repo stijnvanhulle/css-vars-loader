@@ -95,8 +95,6 @@ module.exports = {
 
 ## Examples
 
-[ example outline text ]
-
 **config.js**
 
 ```json
@@ -138,12 +136,10 @@ html {
   background: white;
 }
 
-:root{
+:root {
   --primary-color: #000;
 }
-
 ```
-
 
 ## Contributing
 
