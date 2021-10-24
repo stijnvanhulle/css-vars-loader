@@ -14,10 +14,10 @@
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "test": "echo 'No test'",
     "clean": "del-cli lib",
-    "release": "standard-version --skip.bump",
-    "release:patch": "standard-version --release-as patch --skip.changelog",
-    "release:minor": "standard-version --release-as minor --skip.changelog",
-    "release:major": "standard-version --release-as major --skip.changelog"
+    "release": "standard-version --skip.bump,changelog",
+    "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major"
   },
   "files": [
     "lib"
