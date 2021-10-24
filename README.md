@@ -71,7 +71,7 @@ module.exports = {
 Type: `file`
 Default: `undefined`
 
-The file where you want to append the css variables
+The file where you want to append the css variables, see [ResourcePath](https://webpack.js.org/api/loaders/#thisresourcepath) for path format
 
 **webpack.config.js**
 
