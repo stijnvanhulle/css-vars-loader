@@ -2,13 +2,13 @@ name: Build package and publish
 
 on:
   push:
-    branches:    
+    branches:
       - main
       - 'releases/**'
   pull_request:
   workflow_dispatch:
 
-env: 
+env:
   NODE_VERSION: 'lts/*'
   FOLDER: .
 
@@ -17,7 +17,7 @@ defaults:
     working-directory: .
 
 jobs:
-  test: 
+  test:
     name: 'Node ${{ matrix.node }}'
     runs-on: ubuntu-latest
     strategy:
@@ -38,7 +38,7 @@ jobs:
 
       - name: Run unit tests
         run: yarn test
-        
+
       - name: Run linter
         run: yarn run lint
 
@@ -67,15 +67,15 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           bash $GITHUB_WORKSPACE/.github/version.sh bump patch
-          
+
       - name: Creating .env file
         uses: iamsauravsharma/create-dotenv@v1.2.0
         with:
-          env-prefix: 'ENV_' 
+          env-prefix: 'ENV_'
           directory: ${{ env.FOLDER }}
         env:
           ENV_VERSION: ${{ env.VERSION }}
-          
+
       - name: Build package
         run: yarn build
 
@@ -83,12 +83,12 @@ jobs:
         working-directory: .
         run: |
           echo "Released version: $VERSION"
-          git push --follow-tags -v    
+          git push --follow-tags -v
         env:
           VERSION: ${{ env.VERSION }}
-      
+
       - name: Publish package on npm
-        run: yarn publish ./build
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -97,9 +97,9 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'yarn'
           registry-url: 'https://npm.pkg.github.com'
-                
+
       - name: Publish package on Github
-        run: yarn publish ./build
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
