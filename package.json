@@ -1,5 +1,5 @@
 {
-  "name": "@stijnvanhulle/components",
+  "name": "@stijnvanhulle/css-vars-loader",
   "version": "1.0.0",
   "description": "Loader to use config.json file as css variables",
   "main": "lib/index.js",
