@@ -1,0 +1,25 @@
+.env
+.cache
+.dccache
+.db
+
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_STORE
+.DS_Store
+
+dist
+build
+minecraft
+/data/
+**/config/coverage/*
+!example.env
+coverage/*
+protonmail/*
+code/**
