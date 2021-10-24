@@ -1,11 +1,4 @@
 node_modules/
-.env
-.cache
-.dccache
-.db
-.cache
-.key
-.tgz
 
 # Logs
 logs
@@ -15,8 +8,22 @@ yarn-debug.log*
 yarn-error.log*
 *.DS_STORE
 DS_STORE
-coverage
+.vscode
 
 dist
 build
+lib
+es
+/data/
+**/config/coverage/*
+*.env
 !example.env
+*.db
+**/coverage/*
+cache
+*.cache
+*.key
+*.crt
+*.crt
+.cache/**/*
+.dccache

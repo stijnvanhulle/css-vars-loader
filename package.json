@@ -2,23 +2,26 @@
   "name": "@stijnvanhulle/components",
   "version": "1.0.0",
   "description": "Loader to use config.json file as css variables",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "yarn build -- -w",
     "prebuild": "yarn run clean",
-    "build": "babel src --out-dir build --extensions \".ts,.tsx\"",
-    "rad": "yarn build && cd build && npm pack --extensions '.ts'",
+    "build": "babel src --copy-files --out-dir lib --extensions \".ts,.tsx\"",
+    "rad": "yarn build && cd lib && npm pack --extensions '.ts'",
     "transpile": "tsc -p ./tsconfig.json",
     "typecheck": "tsc --noEmit",
     "typecheck:watch": "yarn run typecheck -- --watch",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "test": "echo 'No test'",
-    "clean": "del-cli build",
+    "clean": "del-cli lib",
     "release": "standard-version --skip.bump",
     "release:patch": "standard-version --release-as patch",
     "release:minor": "standard-version --release-as minor",
     "release:major": "standard-version --release-as major"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/stijnvanhulle/css-vars-loader.git"
