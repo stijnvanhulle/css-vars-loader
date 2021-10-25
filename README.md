@@ -6,7 +6,12 @@
 
 # @stijnvanhulle/css-vars-loader
 
-Loader to use config.json file as css variables
+Loader to use config.json file as css variables. This puts the declaration at the end of your base css file.
+This is based on what the [less-loader](https://www.npmjs.com/package/less-loader#lessoptions) is using for setting the less-option *modify vars*. 
+See [--modify-var](https://lesscss.org/usage/#command-line-usage-options) less cli command for more information.
+```bash
+lessc --modify-var
+```
 
 ## Getting Started
 
