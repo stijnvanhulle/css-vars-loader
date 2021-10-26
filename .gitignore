@@ -17,6 +17,7 @@ build
 lib
 ./types
 es
+esnext
 /data/
 **/config/coverage/*
 *.env
