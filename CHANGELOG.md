@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.12 (2022-01-02)
+
+
+### Bug Fixes
+
+* pack update ([179fbaa](https://github.com/stijnvanhulle/css-vars-loader/commit/179fbaa9fe17c2b10deedeadcf3c732942b22fec))
+
 ### 1.0.11 (2021-12-15)
 
 ### 1.0.10 (2021-11-23)
