@@ -1,6 +1,6 @@
 {
   "name": "@stijnvanhulle/css-vars-loader",
-  "version": "1.0.14",
+  "version": "1.1.0",
   "description": "Loader to use config.json file as css variables",
   "main": "lib/index.js",
   "module": "es/index.js",
