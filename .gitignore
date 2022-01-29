@@ -15,7 +15,7 @@ DS_STORE
 dist
 build
 lib
-./types
+types
 es
 esnext
 /data/
